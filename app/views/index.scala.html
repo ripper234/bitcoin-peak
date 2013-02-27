@@ -1,7 +1,30 @@
-@(peak: Int)
+@(peak: BigDecimal)
 
 @main("Welcome to Play 2.1") {
-    
-    The peak Bitcoin price is @peak USD
+    <style>
+        #text {
+            font-size: 40px;
+            margin:auto;
+            text-align: center;
+        }
+        #container {
+            position: absolute;
+            top:45%;
+            width:100%;
+        }
+        #chart {
+            background-image: url(/assets/images/graphchart.jpg);
+            width: 252px;
+            height: 252px;
+            position: fixed;
+            top:55%;
+            left:40%;
+        }
+    </style>
+    <div id="container">
+        <div id="text">The peak Bitcoin price is <span class="price">@peak USD</span>
+        <div id="chart"></div>
+    </div>
+    </div>
     
 }

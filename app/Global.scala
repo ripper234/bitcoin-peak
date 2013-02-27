@@ -9,7 +9,7 @@ object Global extends GlobalSettings {
 
   override def onStart(app: Application) {
     val monitorActor = Akka.system.actorOf(Props[UpdateCacheJob], name = "updateCacheLoad")
-    Akka.system.scheduler.schedule(0 seconds, 2 seconds, monitorActor, Tick)
+    Akka.system.scheduler.schedule(0 seconds, 10 seconds, monitorActor, Tick)
   }
 
   override def onStop(app: Application) {
