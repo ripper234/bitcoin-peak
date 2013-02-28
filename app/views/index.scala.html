@@ -9,7 +9,7 @@
         }
         #container {
             position: absolute;
-            top:45%;
+            top:40%;
             width:100%;
         }
         #chart {
@@ -17,13 +17,20 @@
             width: 252px;
             height: 252px;
             position: fixed;
-            top:55%;
+            top:50%;
             left:40%;
+        }
+        #footer {
+            position: fixed;
+            bottom: 20px;
+            font-size:14px;
         }
     </style>
     <div id="container">
         <div id="text">The peak Bitcoin price is <span class="price">@peak USD</span>
         <div id="chart"></div>
+        <div id="footer">The site is updated once a day, based on <a href="http://blockchain.info/charts/market-price?timespan=all&format=json">blockchain.info</a> Source <a href="https://github.com/ripper234/bitcoin-peak">on github</a>.
+        </div>
     </div>
     </div>
 
