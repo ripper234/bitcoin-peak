@@ -7,7 +7,7 @@ import play.api.mvc._
 object Application extends Controller {
   
   def index = Action {
-    val peak = PeakPriceFinder.getCachedPeak
+    val peak = BlockchainPeakPriceFinder.getCachedPeak
     Ok(views.html.index(peak))
   }
   
