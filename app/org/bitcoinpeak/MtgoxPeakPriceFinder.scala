@@ -9,8 +9,8 @@ object MtgoxPeakPriceFinder extends PeakPriceFinder{
       setQueryParameter("symbol", "mtgoxUSD").get.get.getBody
     val lines = csv.split("\r|\n")
     val peak = lines.map(line => {
-      var parts: Array[String] = line.split("\\s")
-      val price = BigDecimal(parts{2})
+      var parts: Array[String] = line.split(",")
+      val price = BigDecimal(parts{1})
       price
     }).max
     peak
