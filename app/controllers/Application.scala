@@ -3,7 +3,7 @@ package controllers
 import play.api._
 import cache.Cache
 import play.api.mvc._
-import org.bitcoinpeak.{MtgoxPeakPriceFinder, Config}
+import org.bitcoinpeak.{BitcoinChartsPeakPriceFinder, Config}
 import play.api.Play.current
 
 object Application extends Controller {
@@ -19,7 +19,7 @@ object Application extends Controller {
   }
 
   def calcMtgox = Action {
-    val peak : BigDecimal = MtgoxPeakPriceFinder.calcPeak()
-    Ok(peak.toString() + ", calculated by " + MtgoxPeakPriceFinder.getClass)
+    val peak : BigDecimal = BitcoinChartsPeakPriceFinder.calcPeak()
+    Ok(peak.toString() + ", calculated by " + BitcoinChartsPeakPriceFinder.getClass)
   }
 }

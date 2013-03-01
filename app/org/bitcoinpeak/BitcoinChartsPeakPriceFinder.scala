@@ -1,6 +1,6 @@
 package org.bitcoinpeak
 
-object MtgoxPeakPriceFinder extends PeakPriceFinder{
+object BitcoinChartsPeakPriceFinder extends PeakPriceFinder{
   def calcPeak() : BigDecimal = {
     val startTime = 1361836800 // unixtime, Deb 26 2012
     val url = "http://bitcoincharts.com/t/trades.csv"

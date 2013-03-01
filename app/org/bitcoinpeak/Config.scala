@@ -1,5 +1,5 @@
 package org.bitcoinpeak
 
 object Config {
-  val peakService = MtgoxPeakPriceFinder
+  val peakService = BitcoinChartsPeakPriceFinder
 }
