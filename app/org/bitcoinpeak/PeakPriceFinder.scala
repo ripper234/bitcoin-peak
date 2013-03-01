@@ -1,5 +1,5 @@
 package org.bitcoinpeak
 
 abstract class PeakPriceFinder {
-  def calcPeak()
+  def calcPeak() : BigDecimal
 }
