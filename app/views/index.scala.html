@@ -27,7 +27,7 @@
         }
     </style>
     <div id="container">
-        <div id="text">The peak Bitcoin price is <span class="price">@peak USD</span>
+        <div id="text">The peak Bitcoin price is <span class="price">@peak.formatted("%1.5f") USD</span>
         <div id="chart"></div>
         <div id="footer">The priced is updated every minute, based on <a href="http://bitcoincharts.com/about/markets-api/">bitcoincharts API</a> Source <a href="https://github.com/ripper234/bitcoin-peak">on github</a>.
         </div>
