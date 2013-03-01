@@ -12,23 +12,22 @@ object BlockchainPeakPriceFinder extends PeakPriceFinder {
   }
 
   override def calcPeak() {
-    // val url = "http://blockchain.info/charts/market-price?timespan=all&format=json"
     val url = "http://blockchain.info/charts/market-price"
-    var json = play.libs.WS.url(url).setQueryParameter("timespan", "all").
+    val json = play.libs.WS.url(url).setQueryParameter("timespan", "all").
       setQueryParameter("format", "json").get().get().asJson()
 
     val values = json.get("values").toList
 
-    var peak = (for (value <- values) yield {
+    val peak = (for (value <- values) yield {
       getValue(value)
     }).max
 
     var peakPoint = values.find(n => n.get("y").getDecimalValue.equals(peak))
 
-    Cache.set("peak", peak)
+    peak
   }
 
-  def getValue(value: JsonNode): BigDecimal = {
+  private def getValue(value: JsonNode): BigDecimal = {
     val timestamp = value.get("x").asLong()
     if (timestamp == 1307643305 || timestamp == 1307729705) {
       // Account for a bug in blockchain.info data
