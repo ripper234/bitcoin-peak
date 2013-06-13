@@ -26,7 +26,7 @@ object Peak {
     val peak = DB.withConnection { implicit conn =>
 
 
-      SQL("SELECT peak from Peaks ORDER BY time desc limit 1")
+      SQL("SELECT * from Peaks ORDER BY time desc limit 1")
         .as(Peak.allFieldsParser *)
     }
     if (peak.isEmpty) {
@@ -36,10 +36,10 @@ object Peak {
     }
   }
 
-  def addPeak(peak : BigDecimal) {
+  def addPeak(peak : scala.BigDecimal) {
     DB.withConnection { implicit conn =>
       SQL("INSERT INTO Peaks(peak) VALUES ({peak})")
-        .on("peak" -> peak)
+        .on("peak" -> peak.underlying())
         .executeInsert()
 
     }
