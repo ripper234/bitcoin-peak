@@ -11,7 +11,7 @@ object ApplicationBuild extends Build {
     // Add your project dependencies here,
     jdbc,
     anorm,
-    "org.quartz-scheduler" % "quartz" % "2.1.7"
+    "org.quartz-scheduler" % "quartz" % "2.1.7",
     "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
   )
 
