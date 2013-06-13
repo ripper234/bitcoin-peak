@@ -12,6 +12,7 @@ object ApplicationBuild extends Build {
     jdbc,
     anorm,
     "org.quartz-scheduler" % "quartz" % "2.1.7"
+    "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
   )
 
 
