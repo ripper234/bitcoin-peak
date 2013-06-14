@@ -38,8 +38,8 @@ object Peak {
 
   def addPeak(peak : scala.BigDecimal) {
     DB.withConnection { implicit conn =>
-      SQL("INSERT INTO Peaks(peak) VALUES ({peak})")
-        .on("peak" -> peak.underlying())
+      SQL("INSERT INTO Peaks(price) VALUES ({price})")
+        .on("price" -> peak.underlying())
         .executeInsert()
 
     }
